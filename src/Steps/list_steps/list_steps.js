@@ -4,8 +4,8 @@ import  StepTwo  from "../Step_2";
 
 const steps =
     [
-        {name: 'StepOne', component: <StepOne/>},
-        {name: 'StepTwo', component: <StepTwo/>},
+        {name: "StepOne", component: <StepOne/>},
+        {name: "StepTwo", component: <StepTwo/>},
     ];
 
 export { steps }

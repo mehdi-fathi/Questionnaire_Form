@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Step_1  from "../Steps/Step_1";
-
 class Form extends Component {
 
     constructor(props) {
