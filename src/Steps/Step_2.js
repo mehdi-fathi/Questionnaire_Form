@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
 
 const element=<h1>Welcome to React</h1>;
 

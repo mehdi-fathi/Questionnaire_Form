@@ -20,7 +20,6 @@ class Form extends Component {
         this.setState({compState:input})
     }
     next() {
-        console.log(this.props.steps.length);
         this.setStep(this.state.compState+1);
         this.enablePrevipusBtm(this.state.compState+1);
     }
