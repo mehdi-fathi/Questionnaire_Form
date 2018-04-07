@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-const element=<h1>Welcome to React</h1>;
-
 class App extends Component {
 
     constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import  StepOne  from  "../Step_1";
+import  StepOne  from "../Step_1";
 import  StepTwo  from "../Step_2";
 
 const steps =

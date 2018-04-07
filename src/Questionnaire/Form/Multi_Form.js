@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Form  from "../Form/Form";
+import Form  from "./Form";
 
 import {steps}  from "../Steps/list_steps/list_steps";
 
-class App extends Component {
+class Multi_Form extends Component {
     render() {
         return (
             <Form steps={steps}>
@@ -12,4 +12,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Multi_Form;
