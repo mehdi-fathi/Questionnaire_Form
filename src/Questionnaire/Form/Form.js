@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ProgressApp  from "../Progress/index.js";
+
 class Form extends Component {
 
     constructor(props) {
@@ -38,7 +40,8 @@ class Form extends Component {
     }
     render() {
         return (
-
+<div>
+            <ProgressApp currentStep={this.state.compState} steps={this.props.steps}></ProgressApp>
             <fieldset>
                     <div>
                         {this.props.steps[this.state.compState].component}
@@ -47,6 +50,7 @@ class Form extends Component {
                        name="previous" onClick={this.previous} class="previous action-button" value="Previous" />
                 <input type="button" onClick={this.next} name="next" class="next action-button" value="Next" />
             </fieldset>
+</div>
 
         );
     }
