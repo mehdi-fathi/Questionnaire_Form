@@ -16,4 +16,11 @@ npm start
 ```
 It shows project on your web browser.
 
+### Build
+
+You should build project for upload on production project.
+ 
+```sh
+npm run build
+```
 I hope to it's helpfull for you.
