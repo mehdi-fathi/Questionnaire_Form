@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ProgressApp  from "../Progress/index.js";
+import {required} from "../Validator/validation";
 
 class Form extends Component {
 
@@ -21,9 +22,20 @@ class Form extends Component {
     setStep(input){
         this.setState({compState:input})
     }
+    checkValidation() {
+
+        if(this.props.required(document.getElementById("input").value)){
+            document.getElementById("input").style.borderColor="red";
+            return true;
+        }
+        return false
+    }
     next() {
-        this.setStep(this.state.compState+1);
-        this.enablePrevipusBtm(this.state.compState+1);
+        if(!this.checkValidation()){
+
+            this.setStep(this.state.compState+1);
+            this.enablePrevipusBtm(this.state.compState+1);
+        }
     }
     enablePrevipusBtm(input){
         console.log(input);
@@ -48,7 +60,7 @@ class Form extends Component {
                     </div>
                 <input type="button" style={this.state.showPreviousBtn ? {} : this.hidden}
                        name="previous" onClick={this.previous} class="previous action-button" value="Previous" />
-                <input type="button" onClick={this.next} name="next" class="next action-button" value="Next" />
+                <input type="button" ref="next1" id='next'  onClick={this.next} name="next" class="next action-button" value="Next" />
             </fieldset>
 </div>
 
