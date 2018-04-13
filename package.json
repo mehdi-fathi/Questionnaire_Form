@@ -1,7 +1,12 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "questionnaire_form",
+  "version": "0.1.2",
+  "private": false,
+  "author": {
+    "name": "mehdi_fathi",
+    "email": "mehdi_fathi.developer@gmail.com",
+    "url": "https://github.com/mehdi-fathi"
+  },
   "homepage": "./",
   "dependencies": {
     "react": "^16.2.0",

@@ -1,5 +1,5 @@
 
-# Wizard-form-reactjs
+# Questionnaire_Form react js
 
 Questionnaire form html by multi step.This is a base project to make Questionnaire for users.You can develop it.
 
@@ -7,7 +7,7 @@ Questionnaire form html by multi step.This is a base project to make Questionnai
 
 To run this sample run after clone it:
 ```sh
-npm install
+npm install questionnaire_form
 ```
 It install or update dependencies
  
