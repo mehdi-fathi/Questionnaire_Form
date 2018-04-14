@@ -5,7 +5,7 @@ Questionnaire form html by multi step.This is a base project to make Questionnai
 
 ## Instructions
 
-To run this sample run after clone it:
+To install it:
 ```sh
 npm install questionnaire_form
 ```
