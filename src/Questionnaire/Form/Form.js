@@ -11,6 +11,7 @@ class Form extends Component {
             showPreviousBtn: false,
             showNextBtn: true,
             compState: 0,
+            stepsValue:{}
         };
         this.hidden = {
             display: 'none'
@@ -33,6 +34,11 @@ class Form extends Component {
     next() {
         if(!this.checkValidation()){
 
+            this.setState({
+                stepsValue: [...this.state.stepsValue ,document.getElementById("input").value]
+            })
+            console.log(...this.state.stepsValue); // it shows key of array
+
             this.setStep(this.state.compState+1);
             this.enablePrevipusBtm(this.state.compState+1);
         }
@@ -46,8 +52,10 @@ class Form extends Component {
         }
     }
     previous() {
-        console.log(this.props.steps.length);
         this.setStep(this.state.compState-1);
+
+        this.state.stepsValue.splice(this.state.compState-1,this.state.compState);//it removes value step
+
         this.enablePrevipusBtm(this.state.compState-1);
     }
     render() {
