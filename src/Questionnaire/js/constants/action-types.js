@@ -1,1 +1,3 @@
-export const ADD_VALUE = "ADD_VALUE";
+ const ADD_VALUE = "ADD_VALUE";
+ const REMOVE_VALUE = "REMOVE_VALUE";
+ export {ADD_VALUE,REMOVE_VALUE}

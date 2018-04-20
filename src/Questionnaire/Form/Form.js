@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 import ProgressApp  from "../Progress/index.js";
 import {required} from "../Validator/validation";
 
-import { addSteps } from "../js/actions/index";
+import { addSteps,removeStep } from "../js/actions/index";
 import store from "../js/store/index";
 import {connect} from "react-redux";
 
 const mapDispatchToProps = dispatch => {
     return {
-        addSteps: steps => dispatch(addSteps(steps))
+        addSteps: steps => dispatch(addSteps(steps)),
+        removeStep: stepsNumber => dispatch(removeStep(stepsNumber)),
     };
 };
 
@@ -30,6 +31,14 @@ class Form extends Component {
         console.log('run');
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
+
+        // const body  = '';
+        // const step = this.state.compState;
+        // // console.log(this.state.input);
+        // // console.log(document.getElementById("input").value);
+        //
+        //
+        // this.props.addSteps({body,step});
     }
     setStep(input){
         this.setState({compState:input})
@@ -54,16 +63,17 @@ class Form extends Component {
             // console.log(this.state.input);
             // console.log(document.getElementById("input").value);
 
-            this.props.addSteps(body,step);
 
-            console.log(...this.state.stepsValue); // it shows key of array
+            this.props.addSteps({body,step});
+
+            // console.log(...this.state.stepsValue); // it shows key of array
 
             this.setStep(this.state.compState+1);
             this.enablePrevipusBtm(this.state.compState+1);
         }
     }
     enablePrevipusBtm(input){
-        console.log(input);
+        // console.log(input);
         if(input >= 1){
             this.setState({showPreviousBtn:true})
         }else{
@@ -72,6 +82,11 @@ class Form extends Component {
     }
     previous() {
         this.setStep(this.state.compState-1);
+
+        const body  = document.getElementById("input").value;
+        const step = this.state.compState;
+
+        this.props.removeStep(this.state.compState);
 
         this.state.stepsValue.splice(this.state.compState-1,this.state.compState);//it removes value step
 

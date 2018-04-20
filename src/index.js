@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './Questionnaire/index.js';
 import registerServiceWorker from './registerServiceWorker';
 import store from "./Questionnaire/js/store/index";
-import { addSteps } from "./Questionnaire/js/actions/index";
+import { addSteps,removeStep } from "./Questionnaire/js/actions/index";
 
 import index from "./Questionnaire/js/index";
 
