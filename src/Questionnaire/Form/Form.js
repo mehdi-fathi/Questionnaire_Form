@@ -3,6 +3,16 @@ import React, { Component } from 'react';
 import ProgressApp  from "../Progress/index.js";
 import {required} from "../Validator/validation";
 
+import { addSteps } from "../js/actions/index";
+import store from "../js/store/index";
+import {connect} from "react-redux";
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addSteps: steps => dispatch(addSteps(steps))
+    };
+};
+
 class Form extends Component {
 
     constructor(props) {
@@ -17,6 +27,7 @@ class Form extends Component {
             display: 'none'
         };
 
+        console.log('run');
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
     }
@@ -37,6 +48,14 @@ class Form extends Component {
             this.setState({
                 stepsValue: [...this.state.stepsValue ,document.getElementById("input").value]
             })
+
+            const body  = document.getElementById("input").value;
+            const step = this.state.compState;
+            // console.log(this.state.input);
+            // console.log(document.getElementById("input").value);
+
+            this.props.addSteps(body,step);
+
             console.log(...this.state.stepsValue); // it shows key of array
 
             this.setStep(this.state.compState+1);
@@ -75,5 +94,5 @@ class Form extends Component {
         );
     }
 }
-
-export default Form;
+const Form1 = connect(null, mapDispatchToProps)(Form);
+export default Form1;
