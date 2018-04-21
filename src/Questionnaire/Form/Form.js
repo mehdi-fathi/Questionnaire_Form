@@ -67,9 +67,11 @@ class Form extends Component {
             this.props.addSteps({body,step});
 
             // console.log(...this.state.stepsValue); // it shows key of array
+            if(this.state.compState<9){
 
-            this.setStep(this.state.compState+1);
-            this.enablePrevipusBtm(this.state.compState+1);
+                this.setStep(this.state.compState+1);
+                this.enablePrevipusBtm(this.state.compState+1);
+            }
         }
     }
     enablePrevipusBtm(input){
@@ -102,7 +104,7 @@ class Form extends Component {
                     </div>
                 <input type="button" style={this.state.showPreviousBtn ? {} : this.hidden}
                        name="previous" onClick={this.previous} class="previous action-button" value="Previous" />
-                <input type="button" ref="next1" id='next'  onClick={this.next} name="next" class="next action-button" value="Next" />
+                <input type="button" ref="next1" id='next'  onClick={this.next} name="next" class="next action-button" value={this.state.compState == 9 ? 'Submit' : 'Next'} />
             </fieldset>
 </div>
 
