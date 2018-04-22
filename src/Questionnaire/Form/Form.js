@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-
 import ProgressApp  from "../Progress/index.js";
-import {required} from "../Validator/validation";
-
 import { addSteps,removeStep } from "../js/actions/index";
-import store from "../js/store/index";
 import {connect} from "react-redux";
 
 const mapDispatchToProps = dispatch => {
@@ -85,9 +81,6 @@ class Form extends Component {
     previous() {
         this.setStep(this.state.compState-1);
 
-        const body  = document.getElementById("input").value;
-        const step = this.state.compState;
-
         this.props.removeStep(this.state.compState);
 
         this.state.stepsValue.splice(this.state.compState-1,this.state.compState);//it removes value step
@@ -104,7 +97,7 @@ class Form extends Component {
                     </div>
                 <input type="button" style={this.state.showPreviousBtn ? {} : this.hidden}
                        name="previous" onClick={this.previous} class="previous action-button" value="Previous" />
-                <input type="button" ref="next1" id='next'  onClick={this.next} name="next" class="next action-button" value={this.state.compState == 9 ? 'Submit' : 'Next'} />
+                <input type='button' ref="next1" id='next'  onClick={this.next} name="next" class="next action-button" value={this.state.compState === 9 ? 'Submit' : 'Next'} />
             </fieldset>
 </div>
 

@@ -1,5 +1,4 @@
 import { ADD_VALUE,REMOVE_VALUE } from "../constants/action-types";
-import store from "../store";
 const initialState = {
     steps: [],
     stepsNumber: [],

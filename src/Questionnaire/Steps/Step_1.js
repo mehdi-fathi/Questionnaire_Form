@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-
 import store from "../js/store/index";
 
 
- class App extends React.Component {
+ class App extends Component {
 
     constructor(props) {
         super(props);
 
-        if(typeof store.getState().steps[0] != "undefined"){
+        if(typeof store.getState().steps[0] !== "undefined"){
             var s=store.getState().steps[0].body
         }
 

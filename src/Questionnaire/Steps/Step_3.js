@@ -4,7 +4,7 @@ import store from "../js/store";
 class App extends Component {
     constructor(props) {
         super(props);
-        if(typeof store.getState().steps[2] != "undefined"){
+        if(typeof store.getState().steps[2] !== "undefined"){
             var input=store.getState().steps[2].body
         }
         this.state = {
