@@ -7,7 +7,7 @@
 }
 html {
   height: 100%;
-  background: #0e0e0e;
+  background: #2596ce;
 }
 body {
   font-family: "Open Sans", arial, verdana;
@@ -96,10 +96,10 @@ body {
 #progressbar li:before {
   content: counter(step);
   counter-increment: step;
-  width: 20px;
-  line-height: 20px;
+  width: 35px;
+  line-height: 35px;
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   color: #333;
   background: white;
   border-radius: 3px;
@@ -113,7 +113,7 @@ body {
   background: white;
   position: absolute;
   left: -50%;
-  top: 9px;
+  top: 15px;
   z-index: -1;
   /*put it behind the numbers*/
 }

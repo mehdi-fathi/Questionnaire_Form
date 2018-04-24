@@ -25,6 +25,7 @@ class ProgressApp extends Component {
         return this.props.steps.map((s, i)=> (
             <li className={ this.props.currentStep >= i ? 'active' : ''} key={i} value={s}>
             </li>
+
         ));
     }
 

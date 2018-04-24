@@ -58,9 +58,9 @@ class Form extends Component {
             const step = this.state.compState;
             // console.log(this.state.input);
             // console.log(document.getElementById("input").value);
-
-
             this.props.addSteps({body,step});
+
+            // this.refs.next1.type='submit';
 
             // console.log(...this.state.stepsValue); // it shows key of array
             if(this.state.compState<9){
