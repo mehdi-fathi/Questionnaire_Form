@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ProgressApp  from "../Progress/index.js";
 import { addSteps,removeStep } from "../js/actions/index";
 import {connect} from "react-redux";
+import store from "../js/store";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -67,6 +68,17 @@ class Form extends Component {
 
                 this.setStep(this.state.compState+1);
                 this.enablePrevipusBtm(this.state.compState+1);
+            }
+
+            if(this.state.compState === 9){
+                fetch('http://localhost/', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'header1': 'headerValue'
+                    },
+                    method: 'POST',
+                    body: store.getState()
+                })
             }
         }
     }
