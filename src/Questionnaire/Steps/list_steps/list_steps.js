@@ -12,16 +12,16 @@ import  StepTen  from "../Step_10";
 
 const steps =
     [
-        {name: "StepOne", component: <StepOne/>},
-        {name: "StepTwo", component: <StepTwo/>},
-        {name: "StepThree", component: <StepThree/>},
-        {name: "StepFour", component: <StepFour/>},
-        {name: "StepFive", component: <StepFive/>},
-        {name: "StepSix", component: <StepSix/>},
-        {name: "StepSeven", component: <StepSeven/>},
-        {name: "StepEight", component: <StepEight/>},
-        {name: "StepNine", component: <StepNine/>},
-        {name: "StepTen", component: <StepTen/>},
+        {name: "StepOne", component: <StepOne counter={0}/>},
+        {name: "StepTwo", component: <StepTwo counter={1}/>},
+        {name: "StepThree", component: <StepThree counter={2}/>},
+        {name: "StepFour", component: <StepFour counter={3}/>},
+        {name: "StepFive", component: <StepFive counter={4}/>},
+        {name: "StepSix", component: <StepSix counter={5}/>},
+        {name: "StepSeven", component: <StepSeven counter={6}/>},
+        {name: "StepEight", component: <StepEight counter={7}/>},
+        {name: "StepNine", component: <StepNine counter={8}/>},
+        {name: "StepTen", component: <StepTen counter={9}/>},
     ];
 
 export { steps }

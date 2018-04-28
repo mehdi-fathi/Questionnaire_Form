@@ -51,10 +51,6 @@ class Form extends Component {
     next() {
         if(!this.checkValidation()){
 
-            this.setState({
-                stepsValue: [...this.state.stepsValue ,document.getElementById("input").value]
-            })
-
             const body  = document.getElementById("input").value;
             const step = this.state.compState;
             // console.log(this.state.input);
@@ -92,11 +88,6 @@ class Form extends Component {
     }
     previous() {
         this.setStep(this.state.compState-1);
-
-        this.props.removeStep(this.state.compState);
-
-        this.state.stepsValue.splice(this.state.compState-1,this.state.compState);//it removes value step
-
         this.enablePrevipusBtm(this.state.compState-1);
     }
     render() {

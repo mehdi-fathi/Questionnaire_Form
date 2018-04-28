@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import store from "../js/store/index";
-
+import {setInput}  from "./Fill_Input";
 
  class App extends Component {
 
     constructor(props) {
         super(props);
 
-        if(typeof store.getState().steps[0] !== "undefined"){
-            var s=store.getState().steps[0].body
-        }
-
+        var PreValue=setInput(store.getState().steps[this.props.counter]);
 
         this.state = {
-            input: s
+            input: PreValue
         };
         this.handelChangeInput = this.handelChangeInput.bind(this);
 
