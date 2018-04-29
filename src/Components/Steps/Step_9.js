@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import store from "../js/store";
-import {setInput} from "./Fill_Input";
+import store from "../../Services/Redux/store";
+import {setInput} from "../../Scenes/Steps/Fill_Input";
 
 class App extends Component {
     constructor(props) {

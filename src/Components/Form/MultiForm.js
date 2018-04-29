@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form  from "./Form";
 
-import {steps}  from "../Steps/list_steps/list_steps";
+import {steps}  from "../../Scenes/Steps/List_Steps";
 import {required}  from "../Validator/validation.js";
 
 class Multi_Form extends Component {

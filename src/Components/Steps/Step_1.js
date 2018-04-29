@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import store from "../js/store/index";
-import {setInput}  from "./Fill_Input";
+import store from "../../Services/Redux/store/index";
+import {setInput}  from "../../Scenes/Steps/Fill_Input";
 
  class App extends Component {
 
@@ -12,22 +12,15 @@ import {setInput}  from "./Fill_Input";
         this.state = {
             input: PreValue
         };
-        this.handelChangeInput = this.handelChangeInput.bind(this);
 
     }
-
-    handelChangeInput(event){
-
-    }
-
   render() {
     return (
         <div>
             <h2 class="fs-title">Question 1</h2>
             <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
             <textarea class="form-control" ref="input" name="CAT_Custom_1"
-                      id="input" onChange={this.handelChangeInput}
-                      rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);">
+                      id="input" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);">
                 {this.state.input}
             </textarea>
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ProgressApp  from "../Progress/index.js";
-import { addSteps,removeStep } from "../js/actions/index";
+import { addSteps,removeStep } from "../../Services/Redux/actions/index";
 import {connect} from "react-redux";
-import store from "../js/store";
+import store from "../../Services/Redux/store";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -28,14 +28,6 @@ class Form extends Component {
         console.log('run');
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
-
-        // const body  = '';
-        // const step = this.state.compState;
-        // // console.log(this.state.input);
-        // // console.log(document.getElementById("input").value);
-        //
-        //
-        // this.props.addSteps({body,step});
     }
     setStep(input){
         this.setState({compState:input})
@@ -53,13 +45,8 @@ class Form extends Component {
 
             const body  = document.getElementById("input").value;
             const step = this.state.compState;
-            // console.log(this.state.input);
-            // console.log(document.getElementById("input").value);
             this.props.addSteps({body,step});
-
-            // this.refs.next1.type='submit';
-
-            // console.log(...this.state.stepsValue); // it shows key of array
+            
             if(this.state.compState<9){
 
                 this.setStep(this.state.compState+1);

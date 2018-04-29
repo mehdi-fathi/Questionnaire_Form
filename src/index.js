@@ -2,12 +2,9 @@ import React from 'react';
 
 import { Provider } from "react-redux";
 import ReactDOM from 'react-dom';
-import App from './Questionnaire/index.js';
+import App from './Components/index.js';
 import registerServiceWorker from './registerServiceWorker';
-import store from "./Questionnaire/js/store/index";
-
-
-
+import store from "./Services/Redux/store/index";
 
 ReactDOM.render(
     <Provider store={store}>
