@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 
 class ProgressApp extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-    renderSteps() {
+renderSteps() {
         return this.props.steps.map((s, i)=> (
-            <li className={ this.props.currentStep >= i ? 'active' : ''} key={i} value={s}>
+            <li className={ this.props.currentStep >= i ? "active" : ""} key={i} value={s}>
             </li>
 
         ));

@@ -18,8 +18,7 @@ class Form extends Component {
         this.state = {
             showPreviousBtn: false,
             showNextBtn: true,
-            compState: 0,
-            stepsValue:{}
+            compState: 0
         };
         this.hidden = {
             display: 'none'

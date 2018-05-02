@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form  from "./Form";
 
 import {steps}  from "../../Scenes/Steps/List_Steps";
-import {required}  from "../Validator/validation.js";
+import {required}  from "../../Services/Validator/validation.js";
 
 class Multi_Form extends Component {
     render() {

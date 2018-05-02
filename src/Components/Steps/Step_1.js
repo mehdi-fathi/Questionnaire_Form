@@ -1,28 +1,14 @@
 import React, { Component } from 'react';
-import store from "../../Services/Redux/store/index";
-import {setInput}  from "../../Scenes/Steps/Fill_Input";
+import Textarea from "../../Scenes/Inputs/textarea"
 
  class App extends Component {
 
-    constructor(props) {
-        super(props);
-
-        var PreValue=setInput(store.getState().steps[this.props.counter]);
-
-        this.state = {
-            input: PreValue
-        };
-
-    }
   render() {
     return (
         <div>
             <h2 class="fs-title">Question 1</h2>
             <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
-            <textarea class="form-control" ref="input" name="CAT_Custom_1"
-                      id="input" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);">
-                {this.state.input}
-            </textarea>
+            <Textarea counter={this.props.counter}></Textarea>
 
         </div>
     );
