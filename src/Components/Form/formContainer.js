@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Form  from "./Form";
+import Form  from "./form";
 
-import {steps}  from "../../Scenes/Steps/List_Steps";
+import {steps}  from "../../Scenes/Steps/list_steps";
 import {required}  from "../../Services/Validator/validation.js";
 
-class Multi_Form extends Component {
+class FormContainer extends Component {
     render() {
         return (
             <Form steps={steps} required={required}>
@@ -13,4 +13,4 @@ class Multi_Form extends Component {
     }
 }
 
-export default Multi_Form;
+export default FormContainer;

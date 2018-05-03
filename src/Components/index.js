@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import MultiForm  from "./Form/MultiForm.js";
+import FormContainer  from "./Form/formContainer.js";
 
 class App extends Component {
     render() {
         return (
             <div>
-            <MultiForm></MultiForm>
+            <FormContainer></FormContainer>
             </div>
         );
     }

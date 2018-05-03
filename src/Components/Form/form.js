@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgressApp  from "../Progress/index.js";
+import ProgressContainer  from "../Progress/progressContainer";
 import { addSteps,removeStep } from "../../Services/Redux/actions/index";
 import {connect} from "react-redux";
 import store from "../../Services/Redux/store";
@@ -79,7 +79,7 @@ class Form extends Component {
     render() {
         return (
 <div>
-            <ProgressApp currentStep={this.state.compState} steps={this.props.steps}></ProgressApp>
+            <ProgressContainer currentStep={this.state.compState} steps={this.props.steps}></ProgressContainer>
             <fieldset>
                     <div>
                         {this.props.steps[this.state.compState].component}

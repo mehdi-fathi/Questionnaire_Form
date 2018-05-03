@@ -1,19 +1,16 @@
 import React, { Component}  from 'react';
-import {setInput} from "../Steps/Fill_Input";
+import {setInput} from "../Steps/fill_input";
 import store from "../../Services/Redux/store";
 
 class Textarea extends Component {
 
-
     constructor(props) {
         super(props);
-
         var PreValue=setInput(store.getState().steps[this.props.counter]);
 
         this.state = {
             input: PreValue
         };
-
     }
     render(){
         return(
@@ -25,5 +22,4 @@ class Textarea extends Component {
     }
 }
 
-
-export  default Textarea;
+export default Textarea;
