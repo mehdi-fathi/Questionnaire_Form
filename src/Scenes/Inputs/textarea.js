@@ -7,7 +7,7 @@ class Textarea extends Component {
     constructor(props) {
         super(props);
         var PreValue=setInput(store.getState().steps[this.props.counter]);
-
+console.log(this.props.counter);
         this.state = {
             input: PreValue
         };

@@ -6,10 +6,9 @@ import Textarea from "../../Scenes/Inputs/textarea"
   render() {
     return (
         <div>
-            <h2 class="fs-title">Question 1</h2>
-            <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
+            <h2 class="fs-title">Question {this.props.counter+1}</h2>
+            <h3 class="fs-subtitle">{this.props.question}</h3>
             <Textarea counter={this.props.counter}></Textarea>
-
         </div>
     );
   }
