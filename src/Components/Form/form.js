@@ -11,7 +11,9 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+
 class Form extends Component {
+
 
     constructor(props) {
         super(props);
@@ -24,33 +26,32 @@ class Form extends Component {
             display: 'none'
         };
 
-        console.log('run');
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
     }
     setStep(input){
         this.setState({compState:input})
     }
-    checkValidation() {
+    checkValidation(bodyInput) {
 
-        if(this.props.required(document.getElementById("input").value)){
-            document.getElementById("input").style.borderColor="red";
-            return true;
+        if(this.props.required(bodyInput.value)){
+            bodyInput.style.borderColor="red";
+            return false;
         }
-        return false
+        return true
     }
     next() {
-        if(!this.checkValidation()){
+        let body  = document.getElementById("input");
+        if(this.checkValidation(body)){
 
-            const body  = document.getElementById("input").value;
-            const step = this.state.compState;
-            this.props.addSteps({body,step});
-            
             if(this.state.compState<9){
 
                 this.setStep(this.state.compState+1);
                 this.enablePrevipusBtm(this.state.compState+1);
             }
+            body = body.value;
+            const step = this.state.compState;
+            this.props.addSteps({body,step});
 
             if(this.state.compState === 9){
                 fetch('http://localhost/', {
@@ -59,7 +60,7 @@ class Form extends Component {
                         'header1': 'headerValue'
                     },
                     method: 'POST',
-                    body: store.getState()
+                    body1: store.getState()
                 })
             }
         }

@@ -6,8 +6,8 @@ class Textarea extends Component {
 
     constructor(props) {
         super(props);
-        var PreValue=setInput(store.getState().steps[this.props.counter]);
-console.log(this.props.counter);
+        let PreValue=setInput(store.getState().steps[this.props.counter]);
+
         this.state = {
             input: PreValue
         };
@@ -15,8 +15,7 @@ console.log(this.props.counter);
     render(){
         return(
             <textarea class="form-control" ref="input" name="CAT_Custom_1"
-                      id="input" rows="4" onkeydown="">
-                {this.state.input}
+                      id="input" rows="4" onkeydown="" defaultValue={this.state.input}>
             </textarea>
         );
     }
