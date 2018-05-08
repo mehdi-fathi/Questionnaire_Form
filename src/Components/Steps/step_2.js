@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Textarea from "../../Scenes/Inputs/textarea"
+import Textarea from "../../Scenes/Form/Inputs/textarea"
+import Head from "../../Scenes/Form/Head/head"
 
 class App extends Component {
 
   render() {
     return (
         <div>
-            <h2 class="fs-title">Question {this.props.counter+1}</h2>
-            <h3 class="fs-subtitle">{this.props.question}</h3>
+            <Head counter={this.props.counter} question={this.props.question}> </Head>
             <Textarea counter={this.props.counter}></Textarea>
         </div>
     );

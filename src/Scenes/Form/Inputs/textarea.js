@@ -1,6 +1,6 @@
 import React, { Component}  from 'react';
-import {setInput} from "../Steps/fill_input";
-import store from "../../Services/Redux/store";
+import {setInput} from "../../Steps/fill_input";
+import store from "../../../Services/Redux/store/index";
 
 class Textarea extends Component {
 
