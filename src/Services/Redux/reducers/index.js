@@ -6,17 +6,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_VALUE:
-
-            console.log(action);
-            console.log( action.payload.step);
-            console.log( ...state);
-
-            // return { ...state.steps
-            //     [action.payload.step]:action.payload
-            // };
-            // return { ...state, steps: [[...action.payload.step]: action.payload] };
             if(!state.steps[action.payload.step]){
-
                 return { ...state, steps: [...state.steps, action.payload] };
             }else{
                 state.steps[action.payload.step]=action.payload;

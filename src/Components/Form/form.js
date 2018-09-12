@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ProgressContainer  from "../Progress/progressContainer";
 import {addSteps} from "../../Services/Redux/actions/index";
+import Buttoms from "../../Scenes/Form/Inputs/buttoms";
 import {connect} from "react-redux";
 import store from "../../Services/Redux/store";
+import Textarea from "../../Scenes/Form/Inputs/textarea";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -20,7 +22,6 @@ class Form extends Component {
             selectState: 0
         };
         this.hidden = {
-            display: "none"
         };
 
         this.next = this.next.bind(this);
@@ -48,7 +49,8 @@ class Form extends Component {
             }
             body = body.value;
             const step = this.state.selectState;
-            this.props.addSteps({body,step});
+
+            this.props.addSteps({body,step});// Add value state to redux
 
             if(this.state.selectState === 9){
                 fetch('http://localhost/', {
@@ -57,7 +59,7 @@ class Form extends Component {
                         'header1': 'headerValue'
                     },
                     method: 'POST',
-                    body1: store.getState()
+                    body: store.getState()
                 })
             }
         }
@@ -71,6 +73,7 @@ class Form extends Component {
         }
     }
     previous() {
+        console.log('Run p');
         this.setStep(this.state.selectState-1);
         this.enablePreviousBtn(this.state.selectState-1);
     }
@@ -82,9 +85,10 @@ class Form extends Component {
                     <div>
                         {this.props.steps[this.state.selectState].component}
                     </div>
-                <input type="button" style={this.state.showPreviousBtn ? {} : this.hidden}
-                       name="previous" onClick={this.previous} class="previous action-button" value="Previous" />
-                <input type='button' ref="next1" id='next'  onClick={this.next} name="next" class="next action-button" value={this.state.selectState === 9 ? 'Submit' : 'Next'} />
+                <Buttoms style={this.state.showPreviousBtn ? {} : this.hidden} pre={this.previous} next={this.next}
+                        selectState={this.props.selectState}>
+
+                </Buttoms>
             </fieldset>
 </div>
 

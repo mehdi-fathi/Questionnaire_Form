@@ -12,6 +12,9 @@ npm install questionnaire_form
 It install or update dependencies
  
 ```sh
+npm install
+```
+```sh
 npm start
 ```
 It shows project on your web browser.
