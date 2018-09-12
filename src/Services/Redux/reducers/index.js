@@ -11,7 +11,7 @@ const rootReducer = (state = initialState, action) => {
             console.log( action.payload.step);
             console.log( ...state);
 
-            // return { ...state.steps,
+            // return { ...state.steps
             //     [action.payload.step]:action.payload
             // };
             // return { ...state, steps: [[...action.payload.step]: action.payload] };
