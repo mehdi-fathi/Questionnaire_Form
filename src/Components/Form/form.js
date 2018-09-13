@@ -4,6 +4,7 @@ import {addSteps} from "../../Services/Redux/actions/index";
 import Buttoms from "../../Scenes/Form/Inputs/buttoms";
 import {connect} from "react-redux";
 import store from "../../Services/Redux/store";
+import {buttom_attr} from "../../Scenes/Form/Inputs/buttom"
 import Textarea from "../../Scenes/Form/Inputs/textarea";
 
 const mapDispatchToProps = dispatch => {
@@ -22,7 +23,14 @@ class Form extends Component {
             selectState: 0
         };
         this.hidden = {
+            display: "none"
         };
+
+        // var instance=new buttom_attr();
+        // You can set attr buttom at here
+        // instance.setAttr(['sd']);
+        //
+        // console.log(instance.getAttr());
 
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
@@ -87,7 +95,6 @@ class Form extends Component {
                     </div>
                 <Buttoms style={this.state.showPreviousBtn ? {} : this.hidden} pre={this.previous} next={this.next}
                         selectState={this.props.selectState}>
-
                 </Buttoms>
             </fieldset>
 </div>

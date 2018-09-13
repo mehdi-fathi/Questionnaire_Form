@@ -1,20 +1,25 @@
 import React, { Component}  from 'react';
-import {setInput} from "../../Steps/fill_input";
-import store from "../../../Services/Redux/store/index";
+
+import {buttom_attr} from "./buttom"
 
 class Buttoms extends Component {
 
     constructor(props) {
         super(props);
+        var instanceBtn=new buttom_attr();
+        this.state = instanceBtn.getAttr();
     }
     render(){
         return(
             <div>
                 <input type="button" style={this.props.style}
-                                    name="previous" onClick={this.props.pre} className="previous action-button" value="Previous"/>
+                                    onClick={this.props.pre}
+                                    className={this.state.btn_pre.className}
+                                    value={this.state.btn_pre.value}/>
 
-                <input type='button' ref="next1" id='next' onClick={this.props.next} name="next"
-                       className="next action-button" value={this.props.selectState === 9 ? 'Submit' : 'Next'}/>
+                <input type='button' ref="next1" id='next' onClick={this.props.next}
+                       className={this.state.btn_next.className}
+                       value={this.props.selectState === 9 ? 'Submit' : this.state.btn_next.value}/>
             </div>
         );
     }
