@@ -8,11 +8,15 @@ class Buttoms extends Component {
         super(props);
         var instanceBtn=new buttom_attr();
         this.state = instanceBtn.getAttr();
+
+        this.hidden = {
+            display: "none"
+        };
     }
     render(){
         return(
             <div>
-                <input type="button" style={this.props.style}
+                <input type="button" style={this.props.showPreBtn ? {} : this.hidden}
                                     onClick={this.props.pre}
                                     className={this.state.btn_pre.className}
                                     value={this.state.btn_pre.value}/>

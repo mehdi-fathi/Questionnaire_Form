@@ -4,8 +4,6 @@ import {addSteps} from "../../Services/Redux/actions/index";
 import Buttoms from "../../Scenes/Form/Inputs/buttoms";
 import {connect} from "react-redux";
 import store from "../../Services/Redux/store";
-import {buttom_attr} from "../../Scenes/Form/Inputs/buttom"
-import Textarea from "../../Scenes/Form/Inputs/textarea";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -21,9 +19,6 @@ class Form extends Component {
             showPreviousBtn: false,
             showNextBtn: true,
             selectState: 0
-        };
-        this.hidden = {
-            display: "none"
         };
 
         // var instance=new buttom_attr();
@@ -64,7 +59,7 @@ class Form extends Component {
                 fetch('http://localhost/', {
                     headers: {
                         'Accept': 'application/json',
-                        'header1': 'headerValue'
+                        'header': 'headerValue'
                     },
                     method: 'POST',
                     body: store.getState()
@@ -81,7 +76,6 @@ class Form extends Component {
         }
     }
     previous() {
-        console.log('Run p');
         this.setStep(this.state.selectState-1);
         this.enablePreviousBtn(this.state.selectState-1);
     }
@@ -93,7 +87,7 @@ class Form extends Component {
                     <div>
                         {this.props.steps[this.state.selectState].component}
                     </div>
-                <Buttoms style={this.state.showPreviousBtn ? {} : this.hidden} pre={this.previous} next={this.next}
+                <Buttoms showPreBtn={this.state.showPreviousBtn} pre={this.previous} next={this.next}
                         selectState={this.props.selectState}>
                 </Buttoms>
             </fieldset>
@@ -102,5 +96,5 @@ class Form extends Component {
         );
     }
 }
-const Form1 = connect(null, mapDispatchToProps)(Form);
-export default Form1;
+const form2 = connect(null, mapDispatchToProps)(Form);
+export default form2;

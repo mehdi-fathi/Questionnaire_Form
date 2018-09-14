@@ -11,11 +11,13 @@ const rootReducer = (state = initialState, action) => {
             }else{
                 state.steps[action.payload.step]=action.payload;
             }
+        /* falls through */
         case REMOVE_VALUE:
-            // state.steps.splice(1,2);
             console.log(...state);
+        /* falls through */
         default:
             return state;
+        /* falls through : this comment for dosen't show error warnning jslint  */
     }
 };
 export default rootReducer;
