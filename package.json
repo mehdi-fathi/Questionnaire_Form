@@ -1,10 +1,10 @@
 {
   "name": "questionnaire_form",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "private": false,
   "author": {
     "name": "mehdi_fathi",
-    "email": "mehdi_fathi.developer@gmail.com",
+    "email": "mehdifathi.developer@gmail.com",
     "url": "https://github.com/mehdi-fathi"
   },
   "homepage": "./",
