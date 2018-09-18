@@ -1,6 +1,6 @@
 {
   "name": "questionnaire_form",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "private": false,
   "author": {
     "name": "mehdi_fathi",
@@ -9,9 +9,10 @@
   },
   "homepage": "./",
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "react-scripts": "1.1.1",
+    "redux-devtools-extension": "2.13.5",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
