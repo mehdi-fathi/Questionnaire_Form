@@ -1,6 +1,6 @@
 {
   "name": "questionnaire_form",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "private": false,
   "author": {
     "name": "mehdi_fathi",
@@ -9,6 +9,7 @@
   },
   "homepage": "./",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.1",

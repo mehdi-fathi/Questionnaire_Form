@@ -5,6 +5,8 @@ import Buttoms from "../../Scenes/Form/Inputs/buttoms";
 import {connect} from "react-redux";
 import store from "../../Services/Redux/store";
 
+import axios from 'axios';
+
 const mapDispatchToProps = dispatch => {
     return {
         addSteps: steps => dispatch(addSteps(steps)),
@@ -12,8 +14,16 @@ const mapDispatchToProps = dispatch => {
 };
 
 class Form extends Component {
-
+    componentDidMount() {
+        alert('Run componentDidMount')
+    }
+    componentWillMount () {
+        alert('Run componentWillMount ')
+    }
     constructor(props) {
+
+        alert('Run constructor ')
+
         super(props);
         this.state = {
             showPreviousBtn: false,
@@ -56,14 +66,11 @@ class Form extends Component {
             this.props.addSteps({body,step});// Add value state to redux
 
             if(this.state.selectState === 9){
-                fetch('http://localhost/', {
-                    headers: {
-                        'Accept': 'application/json',
-                        'header': 'headerValue'
-                    },
-                    method: 'POST',
-                    body: store.getState()
-                })
+
+                axios.get('http://localhost/')
+                    .then(res => {
+
+                    })
             }
         }
     }
@@ -88,7 +95,7 @@ class Form extends Component {
                         {this.props.steps[this.state.selectState].component}
                     </div>
                 <Buttoms showPreBtn={this.state.showPreviousBtn} pre={this.previous} next={this.next}
-                        selectState={this.props.selectState}>
+                        selectState={this.state.selectState}>
                 </Buttoms>
             </fieldset>
 </div>

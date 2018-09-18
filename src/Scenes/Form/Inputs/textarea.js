@@ -15,7 +15,7 @@ class Textarea extends Component {
     render(){
         return(
             <textarea class="form-control" ref="input" name="CAT_Custom_1"
-                      id="input" rows="4" onkeydown="" defaultValue={this.state.input}>
+                      id="input" rows="4"  defaultValue={this.state.input}>
             </textarea>
         );
     }
