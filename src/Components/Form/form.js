@@ -15,14 +15,12 @@ const mapDispatchToProps = dispatch => {
 
 class Form extends Component {
     componentDidMount() {
-        alert('Run componentDidMount')
+
     }
     componentWillMount () {
-        alert('Run componentWillMount ')
+
     }
     constructor(props) {
-
-        alert('Run constructor ')
 
         super(props);
         this.state = {
